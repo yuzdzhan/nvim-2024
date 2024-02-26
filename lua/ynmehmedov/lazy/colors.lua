@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-	color = color or "solarized-osaka"
+	color = color or "gruvbox"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -46,6 +46,13 @@ return {
 
     {
         "craftzdog/solarized-osaka.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
+
+    {
+        "ellisonleao/gruvbox.nvim",
         lazy = false,
         priority = 1000,
         opts = {},
