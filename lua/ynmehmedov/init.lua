@@ -24,7 +24,7 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
+autocmd({ "BufWritePre" }, {
     group = YNMehmedovGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
@@ -46,3 +46,7 @@ autocmd('LspAttach', {
         vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
     end
 })
+
+vim.cmd [[
+  autocmd FileType php inoreabbrev dd print_r('<pre>');print_r($);die;<Left><Left><Left><Left><Left><Left><C-R>
+]]
